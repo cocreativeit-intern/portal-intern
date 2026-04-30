@@ -1,0 +1,16 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.0
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+        files: ^addons/msp_.+\.py$
+
+  - repo: local
+    hooks:
+      - id: validate-odoo-module-layout
+        name: Validate Odoo module layout
+        entry: python setup/validate_odoo_module.py
+        language: system
+        pass_filenames: true
+        files: ^addons/msp_.+
