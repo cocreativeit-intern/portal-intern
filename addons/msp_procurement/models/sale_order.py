@@ -20,7 +20,7 @@ class SaleOrder(models.Model):
         ):
             seller = line.product_id._select_seller(
                 quantity=line.product_uom_qty,
-                uom_id=line.product_uom,
+                uom_id=line.product_id.uom_id,
                 date=self.date_order and fields.Date.to_date(self.date_order),
                 partner_id=False,
             )
@@ -41,7 +41,7 @@ class SaleOrder(models.Model):
                     "product_id": sale_line.product_id.id,
                     "name": sale_line.name or sale_line.product_id.display_name,
                     "product_qty": sale_line.product_uom_qty,
-                    "product_uom": sale_line.product_uom.id,
+                    "product_uom": sale_line.product_id.uom_po_id.id or sale_line.product_id.uom_id.id,
                     "price_unit": seller.price,
                     "date_planned": fields.Datetime.now(),
                 })
