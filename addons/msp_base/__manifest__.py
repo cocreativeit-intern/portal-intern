@@ -6,9 +6,9 @@
     "data": [
         "security/ir.model.access.csv",
         "data/msp_dashboard_data.xml",
+        "views/msp_workspace_views.xml",
         "views/msp_dashboard_views.xml",
         "views/msp_navigation_views.xml",
-        "views/msp_workspace_views.xml",
     ],
     "license": "LGPL-3",
     "installable": True,

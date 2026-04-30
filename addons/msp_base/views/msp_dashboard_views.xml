@@ -44,6 +44,6 @@
     <record id="action_msp_dashboard" model="ir.actions.act_window">
         <field name="name">Dashboard</field>
         <field name="res_model">msp.dashboard</field>
-        <field name="view_mode">form,list</field>
+        <field name="view_mode">list,form</field>
     </record>
 </odoo>
